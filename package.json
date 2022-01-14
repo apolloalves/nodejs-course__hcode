@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/apolloalves/nodejs-course/issues"
   },
-  "homepage": "https://github.com/apolloalves/nodejs-course#readme"
+  "homepage": "https://github.com/apolloalves/nodejs-course#readme",
+  "dependencies": {
+    "opn": "^6.0.0"
+  }
 }
