@@ -1,0 +1,19 @@
+{
+  "name": "cursonode",
+  "version": "1.0.0",
+  "description": "NodeJS do zero ao avançado, Mongo DB, REST API, Internet das Coisas IoT, segurança, Express JS. Curso Produzido pela HCODE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apolloalves/nodejs-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apolloalves/nodejs-course/issues"
+  },
+  "homepage": "https://github.com/apolloalves/nodejs-course#readme"
+}
