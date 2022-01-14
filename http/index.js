@@ -12,7 +12,6 @@ const server = http.createServer(( req, res ) => {
     res.end( '<h1>Bem Vindo<br/>NodeJS</h1>' )
 })
 
-
 server.listen(port, hostname, () => {
     console.log(`Servidor rodando em ${url}`)
     
