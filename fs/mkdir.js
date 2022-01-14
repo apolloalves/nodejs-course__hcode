@@ -1,17 +1,17 @@
-const fs = require( 'fs' )
-const assets = ['css', 'js', 'libs', 'imgs', 'fonts']
+//import módule fs
+const fs = require( 'fs' ) 
+const assets = [ 'css', 'js', 'imgs', 'fonts', 'libs' ]
 
+const make = (( dir ) => {
 
-const makeDir = (( dir => {
-
-    dir.forEach( item => {
-        
-        fs.mkdir(`Projeto/assets/${item}`, {recursive: true}, (err) => {
-            if( err ) throw err
-            console.log( `Diretórios criados com sucesso: ${item}`)
+        dir.forEach( ( item ) => {
+            fs.mkdir(`projeto/${item}`,{recursive:true}, ( err ) => {
+                if(err) throw err 
+                console.log( `Diretórios criados com sucesso: ${ item }`)
         })
     })
 
-})( assets ) )
+})( assets )
+
 
 
