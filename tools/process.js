@@ -1,7 +1,12 @@
+
+require('./subdirectory/sub')
+console.log('------------------------------')
 console.log( `Nome do Arquivo:`, __filename )
-console.log( `Diretório do Arquivos:`,__dirname)
-console.log( `Paramêtros de execucão`, process.argv)
-console.log( `Ambiente do Servidor`, process.plataform)
+console.log( `Diretório do Arquivos:`,__dirname) //executa qual é a origem do arquivo
+console.log( `Diretóario em que foi invocado`, process.cwd()) // sempre vai processar de onde esta chamando
+console.log( `Sistema Operacional:`, process.env.OS)
+console.log( `Usuário do SO::`, process.env.USERNAME)
+console.log( `Nome do server`, process.env.COMPUTERNAME)
 
 switch(process.argv[2]) {
     case '-a':
