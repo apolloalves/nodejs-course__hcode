@@ -1,7 +1,7 @@
 console.log('modulo-01.js is cache! ') 
 
-module.exports.oculta  = () => console.log( 'Executando função oculta' )
-module.exports.executa = () => console.log( 'Executando a função executa' )
+const oculta  = () => console.log( 'Executando função oculta' )
+const executa = () => console.log( 'Executando a função executa' )
 module.exports.welcome = 'Bem vindo ao módulo-01.js '
 
 // Módulo REPL
