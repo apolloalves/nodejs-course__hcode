@@ -1,4 +1,4 @@
-const opn = require( 'opn' )
+// const opn = require( 'opn' )
 const http = require( 'http' )
 const hostname = '127.0.0.1'
 const port = 3000
@@ -17,4 +17,4 @@ server.listen(port, hostname, () => {
     
 })
 
-opn( url, { app: 'firefox'} )
+// opn( url, { app: 'firefox'} )

@@ -1,9 +1,9 @@
-const opn = require( 'opn' )
+// const opn = require( 'opn' )
 const http = require( 'http' )
 const { readFile } = require('fs')
 
 const host = '127.0.0.1'
-const port = '3000'
+const port = '5500'
 const url = `http://${host}:${port}`
 
 
@@ -16,7 +16,7 @@ readFile('index.html', ( err, data ) => {
 
 const server = http.createServer(( req, res ) => {
     res.statusCode = 200
-    res.setHeader('Content-Type', 'text/html')
+    res.setHeader('Content-Type', 'text/plain')
     res.end( conteudo )
    
 })
