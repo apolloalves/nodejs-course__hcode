@@ -6,6 +6,10 @@ const userRouters = require('./routes/users')
 const guestRouters = require('./routes/guest')
 const cookieParser = require('cookie-parser')
 
+//static archives
+app.use('/static',express.static('public'))
+
+
 //middleware - func
 app.use(express.json())
 app.use(cookieParser())
@@ -44,13 +48,6 @@ app.use(( err,req, res, next ) => {
     console.log(err.stack)
     res.status(500).json({message: err.message})
 })
-
-
-
-
-
-
-
 
 app.listen(3000, () => console.log('Server runnig at http://localhost:3000'))
 
