@@ -10,10 +10,17 @@ const cookieParser = require('cookie-parser')
 app.use(express.json())
 app.use(cookieParser())
 
-app.use(( req, res, next) => {
+//midlewares routes
+app.use('/admin', adminRouters)
+app.use('/users', userRouters)
+app.use('/guest', guestRouters)
+
+app.use(( req, res, next ) => {
     console.log('Executando midleware em nivel de app')
     return next()
 })
+
+app.get( '/', ( req, res ) => res.send('ExpressJS running now') )
 
 app.get('/setcookie', ( req,res ) => {
     res.cookie('user', 'Apollo Alves', {maxAge: 900000, httpOnly: true})
@@ -26,13 +33,24 @@ app.get('/getcookie', ( req, res ) => {
     if(user) return res.send(user)
 
 })
-//midlewares routes
-app.use('/admin', adminRouters)
-app.use('/users', userRouters)
-app.use('/guest', guestRouters)
+
+app.get('*', (req, res, next) => {
+    setImmediate(() => {
+        next( new Error('Temos um problema'))
+    })
+})
+
+app.use(( err,req, res, next ) => {
+    console.log(err.stack)
+    res.status(500).json({message: err.message})
+})
 
 
-app.get( '/', ( req, res ) => res.send('ExpressJS running now') )
+
+
+
+
+
 
 app.listen(3000, () => console.log('Server runnig at http://localhost:3000'))
 
