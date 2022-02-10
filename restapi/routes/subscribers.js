@@ -34,19 +34,42 @@ router.post('/', async ( req, res ) => {
 
 router.patch('/:id', getSubscriber, (req,res) => {
 
+    if(req.body.userName != null) {
+        res.subscriber.userName = req.body.userName
+    }
+    if(req.body.userChannel != null) {
+        res.subscriber.userChannel = req.body.userChannel
+    }
+
+    try {
+        const updateSubscriber = res.subscriber.save()
+        res.json(updateSubscriber)
+
+    }catch(error) {
+        res.status(500).json({message: error.message})
+    }
+ 
 })
 
 router.delete('/:id', getSubscriber ,(req, res) => {
+    try{
+       
+        res.subscriber.remove() 
+        res.json({message: 'Subscriber was deleted'})
+    
+        }catch(error) {
+            res.status(500).json({message: error.message})
+    }
     
 })
-
 
 async function getSubscriber(req, res, next) {
     
     try {
         subscriber = await Subscriber.findById(req.params.id)
+        
         if(subscriber == null) {
-            return res.status(404).json({message: 'subscriber not found!'})
+            return res.status(404).json({message: 'Subscriber not found!'})
         }
     } catch(error){
         return res.status(500).json({message: error.message})
