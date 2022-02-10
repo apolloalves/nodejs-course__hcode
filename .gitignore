@@ -1,2 +1,3 @@
 .vscode/
 /node_modules/
+/upload-express/node_modules
